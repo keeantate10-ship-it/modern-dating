@@ -1,0 +1,125 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Navigation */
+nav {
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+
+.nav-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo svg {
+  height: 32px;
+  width: 32px;
+  color: #fff;
+}
+
+.nav-logo span {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-menu {
+  display: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #d1d5db;
+}
+
+.mobile-menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  padding-bottom: 1rem;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: #d1d5db;
+}
+
+/* Hero Section */
+.hero {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 2rem;
+  max-width: 672px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
