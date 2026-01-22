@@ -1,167 +1,193 @@
-import React, { useState } from 'react';
-import { Menu, X, ChevronRight, Book, Dumbbell, Heart, Shield } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX Growth - Men's Personal Development</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span>APEX Growth</span>
+      </div>
+      
+      <!-- Desktop Menu -->
+      <div class="nav-menu" id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-export default function MensGrowthSite() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const products = [
-    {
-      icon: Heart,
-      title: "Dating Mastery",
-      description: "Build genuine confidence and connection skills that attract quality partners.",
-      price: "$29",
-      category: "dating"
-    },
-    {
-      icon: Shield,
-      title: "Breaking Free",
-      description: "Science-backed strategies to overcome porn addiction and reclaim your energy.",
-      price: "$39",
-      category: "recovery"
-    },
-    {
-      icon: Dumbbell,
-      title: "Iron Discipline",
-      description: "Transform your physique with workout plans and mindset training that stick.",
-      price: "$34",
-      category: "fitness"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* Navigation */}
-      <nav className="bg-black border-b border-gray-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Book className="h-8 w-8 text-white" />
-              <span className="ml-2 text-xl font-bold text-white">APEX Growth</span>
-            </div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              <a href="#home" className="text-white hover:text-gray-300 transition">Home</a>
-              <a href="#products" className="text-white hover:text-gray-300 transition">Products</a>
-              <a href="#about" className="text-white hover:text-gray-300 transition">About</a>
-              <a href="#contact" className="text-white hover:text-gray-300 transition">Contact</a>
-            </div>
-
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden pb-4 space-y-2">
-              <a href="#home" className="block py-2 text-white hover:text-gray-300 transition">Home</a>
-              <a href="#products" className="block py-2 text-white hover:text-gray-300 transition">Products</a>
-              <a href="#about" className="block py-2 text-white hover:text-gray-300 transition">About</a>
-              <a href="#contact" className="block py-2 text-white hover:text-gray-300 transition">Contact</a>
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="home" className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Build Your Confidence. Fix Your Habits.<br />
-            <span className="text-black">Upgrade Your Dating Life.</span>
-          </h1>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            No fluff. No fake "guru" talk. Just practical systems for men who want better discipline, better dating, and a better future.
-          </p>
-          <a 
-            href="#products" 
-            className="inline-flex items-center bg-black hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-lg transition"
-          >
-            Explore Products
-            <ChevronRight className="ml-2 h-5 w-5" />
-          </a>
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section id="products" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Our Products</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Each ebook and workbook is packed with actionable strategies, exercises, and the honest truth you need to create lasting change.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {products.map((product, idx) => {
-              const Icon = product.icon;
-              return (
-                <div key={idx} className="bg-white rounded-lg p-6 border-2 border-black hover:border-gray-600 transition shadow-lg">
-                  <Icon className="h-12 w-12 text-black mb-4" />
-                  <h3 className="text-2xl font-bold mb-3">{product.title}</h3>
-                  <p className="text-gray-600 mb-6">{product.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-black">{product.price}</span>
-                    <button className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-lg transition">
-                      Buy Now
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">Why APEX Growth?</h2>
-          <div className="space-y-6 text-lg text-gray-700">
-            <p>
-              No fluff. No overnight promises. Just proven strategies from someone who's been in the trenches and come out stronger.
-            </p>
-            <p>
-              Whether you're struggling with confidence in dating, fighting an addiction that's holding you back, or looking to finally commit to your fitness goals, these resources give you the blueprint to take action.
-            </p>
-            <p className="font-semibold text-black">
-              Real growth requires real work. Let's get started.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Transform Your Life?</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join thousands of men who've taken control of their dating life, health, and personal power.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="px-6 py-3 rounded-lg bg-white text-black border-2 border-gray-700 focus:border-gray-500 focus:outline-none"
-            />
-            <button className="bg-white hover:bg-gray-200 text-black font-semibold px-8 py-3 rounded-lg transition">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-white border-t-2 border-black py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-gray-600">
-          <p>&copy; 2026 APEX Growth. All rights reserved.</p>
-          <p className="mt-2 text-sm">Invest in yourself. The returns are limitless.</p>
-        </div>
-      </footer>
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
-  );
-}
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" style="display: none;">
+      <a href="#home" onclick="toggleMobileMenu()">Home</a>
+      <a href="#products" onclick="toggleMobileMenu()">Products</a>
+      <a href="#about" onclick="toggleMobileMenu()">About</a>
+      <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>
+        Build Your Confidence. Fix Your Habits.<br>
+        <span>Upgrade Your Dating Life.</span>
+      </h1>
+      <p>
+        No fluff. No fake "guru" talk. Just practical systems for men who want better discipline, better dating, and a better future.
+      </p>
+      <a href="#products" class="cta-button">
+        Explore Products
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem;">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <p>
+        Each ebook and workbook is packed with actionable strategies, exercises, and the honest truth you need to create lasting change.
+      </p>
+      
+      <div class="products-grid">
+        <!-- Product 1: Dating Mastery -->
+        <div class="product-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <h3>Dating Mastery</h3>
+          <p>Build genuine confidence and connection skills that attract quality partners.</p>
+          <div class="product-footer">
+            <span class="product-price">$29</span>
+            <button class="buy-button">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Product 2: Breaking Free -->
+        <div class="product-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <h3>Breaking Free</h3>
+          <p>Science-backed strategies to overcome porn addiction and reclaim your energy.</p>
+          <div class="product-footer">
+            <span class="product-price">$39</span>
+            <button class="buy-button">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Product 3: Iron Discipline -->
+        <div class="product-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6.5 6.5l11 11"></path>
+            <path d="M21 21l-1-1"></path>
+            <path d="M3 3l1 1"></path>
+            <path d="M18 22H4a2 2 0 0 1-2-2V6"></path>
+            <path d="M2 18l1.5-1.5"></path>
+            <path d="M22 2l-1.5 1.5"></path>
+          </svg>
+          <h3>Iron Discipline</h3>
+          <p>Transform your physique with workout plans and mindset training that stick.</p>
+          <div class="product-footer">
+            <span class="product-price">$34</span>
+            <button class="buy-button">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2>Why APEX Growth?</h2>
+    <div>
+      <p>
+        No fluff. No overnight promises. Just proven strategies from someone who's been in the trenches and come out stronger.
+      </p>
+      <p>
+        Whether you're struggling with confidence in dating, fighting an addiction that's holding you back, or looking to finally commit to your fitness goals, these resources give you the blueprint to take action.
+      </p>
+      <p class="highlight">
+        Real growth requires real work. Let's get started.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="cta-section">
+    <div class="container">
+      <h2>Ready to Transform Your Life?</h2>
+      <p>
+        Join thousands of men who've taken control of their dating life, health, and personal power.
+      </p>
+      <div class="email-form">
+        <input 
+          type="email" 
+          placeholder="Enter your email" 
+          class="email-input"
+        />
+        <button class="submit-button">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 APEX Growth. All rights reserved.</p>
+    <p>Invest in yourself. The returns are limitless.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      
+      if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+        mobileMenu.style.display = 'block';
+        menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+      } else {
+        mobileMenu.style.display = 'none';
+        menuIcon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
+      }
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
